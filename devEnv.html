@@ -1,58 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>BIT@Home 项目开发环境搭建</title>
-</head>
-<body>
-<div class="md-section-divider"></div>
+<h1 id="bithome-开发环境配置指南">BIT@Home 开发环境配置指南</h1>
 
-<div class="md-section-divider"></div>
+<p>标签（空格分隔）： BIT@Home</p>
 
-<h1 id="bithome-项目开发环境搭建">BIT@Home 项目开发环境搭建</h1>
+<hr>
 
-<ul>
-<li><p>Ubuntu / ROS 开发环境安装 <br>
-略。</p></li>
-<li><p>工作区搭建</p></li>
-</ul>
+<h2 id="0-安装-配置-ubuntu-1304-1404">0. 安装 / 配置 Ubuntu 13.04 / 14.04</h2>
 
-<div class="md-section-divider"></div>
+<p>对于普通 PC，参见教程 <a href="http://forum.ubuntu.org.cn/viewtopic.php?f=77&amp;t=458267">Ubuntu 14.04 安装基础教程(图文)</a>。</p>
 
-<pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-bash"><span class="pln">mkdir bitathome </span><span class="pun">&amp;&amp;</span><span class="pln"> cd bitathome</span></code></li><li class="L1"><code class="language-bash"><span class="pln">mkdir src</span></code></li><li class="L2"><code class="language-bash"><span class="pln">catkin_init_workspace</span></code></li><li class="L3"><code class="language-bash"><span class="pln">echo </span><span class="str">"source 工作区路径/devel/setup.zsh"</span><span class="pln"> </span><span class="pun">&gt;&gt;</span><span class="pln"> </span><span class="pun">~/.</span><span class="pln">zshrc</span></code></li></ol></pre>
+<p>对于 Mac 机，推荐使用 rEFIt，参见安装教程 <a href="http://www.zhihu.com/question/22932152">怎么在Macbook上面安装Ubuntu？</a> 和配置教程 <a href="https://help.ubuntu.com/community/MacBookAir6-2/Trusty">MacBookAir (6,2) on Ubuntu 14.04 (Trusty Tahr)</a>。</p>
 
-<ul>
-<li>仓库拉取项目源码</li>
-</ul>
+<p>由于上位机与底层硬件通信对 I/O 效率要求比较高，<strong>不推荐以虚拟机的方式进行安装</strong>。</p>
 
-<div class="md-section-divider"></div>
+<p>安装完成之后，完成如下配置：</p>
 
-<pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-bash"><span class="pln">cd bitathome</span><span class="pun">/</span><span class="pln">src</span></code></li><li class="L1"><code class="language-bash"><span class="pln">git clone https</span><span class="pun">://</span><span class="pln">github</span><span class="pun">.</span><span class="pln">com</span><span class="pun">/</span><span class="pln">ihainan</span><span class="pun">/</span><span class="pln">bitathomeSrc</span><span class="pun">.</span><span class="pln">git</span></code></li></ol></pre>
+<ol>
+<li>修改软件源为北理开源镜像源；</li>
+<li>基础开发工具的安装，例如 build-essential / git / Vim / 翻墙工具 等，总之弄成让你自己觉得舒适的开发环境；</li>
+</ol><div class="se-section-delimiter"></div>
 
-<ul>
-<li><p>运动控制</p>
+<h2 id="1-ros-安装与配置">1. ROS 安装与配置</h2>
 
-<ol><li>将旅行者三号的数据传输线插入到电脑的 USB 接口上，此时 /dev 目录下会生成 ttyUSB0 文件；</li>
-<li>执行命令： <code>usermod -a -G dialout 你的用户名</code>；</li>
-<li>重启系统；</li>
-<li>确保数据传输线已经插到了电脑的 USB 接口上，运行 <code>roscore</code>；</li>
-<li>打开旅行者三号，执行命令：<code>rosrun bitathome_hardware_control hc_cmd_interface.py</code>;</li>
-<li>如果想要通过键盘控制机器运动，运行 <code>rosrun bitathome_hardware_control hc_vertor_keyboard.py</code>，通过 wasdzxc 按键控制运动;</li></ol></li>
-<li><p>Kinect 视觉 / 骨架检测</p>
+<p>对于 Ubuntu 13.04 请参考 <a href="http://wiki.ros.org/hydro/Installation/Ubuntu">Ubuntu install of ROS Hydro</a>。</p>
 
-<ol><li>安装 glut-dev ： <code>sudo apt-get install freeglut3-dev</code>；</li>
-<li>从团队 FTP 上下载 /tools/DevLibs/nite-bin-linux-x64-v1.5.2.21.tar.bz2，解压缩，进入目录，执行：<code>sudo ./install.sh</code>;</li>
-<li>进入 bitathome/src 目录，执行 <code>git clone https://github.com/ros-drivers/openni_tracker.git</code>;</li>
-<li>进入 openni_tracker 目录，执行 <code>git checkout hydro-devel</code>；</li>
-<li>回到 bitathome/src 目录，执行 <code>git clone https://github.com/pirobot/skeleton_markers.git</code></li>
-<li>进入 skeleton_markers 目录，执行 <code>git checkout hydro-devel</code>；</li>
-<li>回到 bitathome 目录，执行 <code>catkin_make</code>。</li></ol></li>
-<li><p>更新仓库</p>
+<p>对于 Ubuntu 14.04 请参考 <a href="http://wiki.ros.org/indigo/Installation/Ubuntu">Ubuntu install of ROS Indigo</a></p>
 
-<ol><li>在执行修改之前，先更新本地仓库 : <code>git pull</code>;</li>
-<li>完成修改后，添加修改：git add 你所写的package路径；</li>
-<li>提交修改：git commit -m "你修改内容的说明"；</li>
-<li>上传修改：git push origin master。</li></ol></li>
-</ul>
-</body>
-</html>
+<p>安装配置完毕之后，新开一个终端，输入 rosc 并按 Tab 补全，若出现 roscd 则说明安装成功。</p>
+
+<h2 id="2-官方教程">2. 官方教程</h2>
+
+<p>阅读 ROS 官方 Wiki 提供教程 <a href="http://wiki.ros.org/ROS/Tutorials">ROS Tutorials</a>，除此之外还可以参考中文教程 <a href="http://blog.csdn.net/hcx25909/article/category/1191901">古月居 - ROS教程</a>，后者基于一个比较早期的 ROS 版本，部分指令不同，参考即可。</p>
+
+<h2 id="3-ide-项目开发">3. IDE 项目开发</h2>
+
+<p>ROS 社区推荐的 IDE 有 Eclipse、CodeBlocks、NetBeans 以及 QtCreator，除了 Eclipse 配合 PyDev 插件可以跑 Python 项目之外，其余都是针对 C++ 项目，具体可参见官方 Wiki <a href="http://wiki.ros.org/IDEs">IDEs</a>，Python 开发的话还推荐 PyCharm，参见教程 <a href="http://my.phirobot.com/blog/2013-12-ros_ide_for_python_pycharm.html">ROS开发环境之PyCharm (python)</a>。</p>
+
+<h2 id="4-git-github-团队项目开发">4. Git / Github 团队项目开发</h2>
+
+<p>Git 教程推荐 <a href="http://igit.linuxtoy.org/contents.html">沉浸式学 Git</a>。</p>
+
+<p>团队仓库使用如下：</p>
+
+<ol>
+<li>在本地新建一个工作区；</li>
+<li>cd 进入工作区的 src 目录；</li>
+<li>执行命令 git clone git@github.com:ihainan/BITAtHomeSummer.git；</li>
+<li>后期的开发都是基于该仓库。</li>
+</ol>
+
+<p>仓库使用说明：</p>
+
+<ol>
+<li>每次仅 Add 自己写的源代码；</li>
+<li>每个模块命名规律为 bitathome_module_name，例如对于硬件控制模块，该 Package 取名为 bitathome_hardware_control;</li>
+<li>commit 注释必须认真填写，填写规范见：<a href="http://segmentfault.com/q/1010000000395039#a-1020000000400217">Github上git commit 提交注释的规范</a>；</li>
+<li>本地测试通过之后再上传到仓库当中，对自己的代码负责。</li>
+</ol>
