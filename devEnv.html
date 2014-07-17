@@ -17,7 +17,7 @@
 <ol>
 <li>修改软件源为北理开源镜像源；</li>
 <li>基础开发工具的安装，例如 build-essential / git / Vim / 翻墙工具 等，总之弄成让你自己觉得舒适的开发环境；</li>
-</ol><div class="se-section-delimiter"></div>
+</ol>
 
 <h2 id="1-ros-安装与配置">1. ROS 安装与配置</h2>
 
@@ -37,7 +37,7 @@
 
 <h2 id="4-git-github-团队项目开发">4. Git / Github 团队项目开发</h2>
 
-<p>Git 教程推荐 <a href="http://igit.linuxtoy.org/contents.html">沉浸式学 Git</a>。</p>
+<p>Git 教程推荐 <a href="http://igit.linuxtoy.org/contents.html">沉浸式学 Git</a> / <a href="http://git-scm.com/book/zh">Pro Git</a>，配合 <a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解 Git</a> 食用味道更佳。</p>
 
 <p>团队仓库使用如下：</p>
 
@@ -57,6 +57,16 @@
 <li>本地测试通过之后再上传到仓库当中，对自己的代码负责。</li>
 </ol>
 
+<h2 id="5-串口通信与运动控制">5. 串口通信与运动控制</h2>
+
+<p>PC 上位机通过串口与旅行者三号底座通信。串口的基本概念参见 <a href="http://zh.wikipedia.org/wiki/%E4%B8%B2%E8%A1%8C%E7%AB%AF%E5%8F%A3">串行接口 - 维基百科</a> 和 <a href="http://digital.ni.com/public.nsf/allkb/9F439B3D68D9072F4825703000383197">串口通信的基本概念</a></p>
+
+<p>在 Linux 下进行串口通信编程，普通用户是没有权限读写串口设备，需要进行设置，参见 <a href="http://tcthinking.diandian.com/post/2012-10-17/40039362949">Linux普通用户无权限使用串口设备的解决方法</a>。</p>
+
+<p>Python 串口通信编程可使用 PySerial 模块，参见 <a href="http://pyserial.sourceforge.net/shortintro.html">PySerial Short introduction</a>。Linux 环境下可使用 socat 虚拟串口，参见 <a href="http://stackoverflow.com/questions/52187/virtual-serial-port-for-linux">Virtual Serial Port for Linux</a> 中排名第二的答案。</p>
+
+<p>旅行者三号串口通信协议见 <a href="ftp://ftp.bitathome.org/References/%E6%97%85%E8%A1%8C%E5%AE%B6III/%E6%97%85%E8%A1%8C%E5%AE%B6III%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/">FTP 资料</a>，暑期作业见 <a href="http://www.bitathome.org/Assignment/14_Summer/1.pdf/">BIT@Home 14 年暑期集训作业(一)</a>。</p>
+
 <hr>
 
-<p>最后编辑时间：2014/07/15 23:04</p>
+<p>最后编辑时间：2014/07/17 14:11</p>
