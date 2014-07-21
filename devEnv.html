@@ -1,14 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BIT@Home 开发环境配置指南</title>
+</head>
+<body>
+<div class="md-section-divider"></div>
+
+<div class="md-section-divider"></div>
+
 <h1 id="bithome-开发环境配置指南">BIT@Home 开发环境配置指南</h1>
 
-<p>标签（空格分隔）： BIT@Home</p>
+<p><code>BIT@Home</code></p>
 
 <hr>
 
+<div class="md-section-divider"></div>
+
 <h2 id="0-安装-配置-ubuntu-1304-1404">0. 安装 / 配置 Ubuntu 13.04 / 14.04</h2>
 
-<p>对于普通 PC，参见教程 <a href="http://forum.ubuntu.org.cn/viewtopic.php?f=77&amp;t=458267">Ubuntu 14.04 安装基础教程(图文)</a>。</p>
+<p>对于普通 PC，参见教程 <a href="http://forum.ubuntu.org.cn/viewtopic.php?f=77&amp;t=458267" target="_blank">Ubuntu 14.04 安装基础教程(图文)</a>。</p>
 
-<p>对于 Mac 机，推荐使用 rEFIt，参见安装教程 <a href="http://www.zhihu.com/question/22932152">怎么在Macbook上面安装Ubuntu？</a> 和配置教程 <a href="https://help.ubuntu.com/community/MacBookAir6-2/Trusty">MacBookAir (6,2) on Ubuntu 14.04 (Trusty Tahr)</a>。</p>
+<p>对于 Mac 机，推荐使用 rEFIt，参见安装教程 <a href="http://www.zhihu.com/question/22932152" target="_blank">怎么在Macbook上面安装Ubuntu？</a> 和配置教程 <a href="https://help.ubuntu.com/community/MacBookAir6-2/Trusty" target="_blank">MacBookAir (6,2) on Ubuntu 14.04 (Trusty Tahr)</a>。</p>
 
 <p>由于上位机与底层硬件通信对 I/O 效率要求比较高，<strong>不推荐以虚拟机的方式进行安装</strong>。</p>
 
@@ -19,25 +32,35 @@
 <li>基础开发工具的安装，例如 build-essential / git / Vim / 翻墙工具 等，总之弄成让你自己觉得舒适的开发环境；</li>
 </ol>
 
+<p>Linux 教程推荐 <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/" target="_blank">UNIX Tutorial for Beginners</a>。</p>
+
+<div class="md-section-divider"></div>
+
 <h2 id="1-ros-安装与配置">1. ROS 安装与配置</h2>
 
-<p>对于 Ubuntu 13.04 请参考 <a href="http://wiki.ros.org/hydro/Installation/Ubuntu">Ubuntu install of ROS Hydro</a>。</p>
+<p>对于 Ubuntu 13.04 请参考 <a href="http://wiki.ros.org/hydro/Installation/Ubuntu" target="_blank">Ubuntu install of ROS Hydro</a>。</p>
 
-<p>对于 Ubuntu 14.04 请参考 <a href="http://wiki.ros.org/indigo/Installation/Ubuntu">Ubuntu install of ROS Indigo</a></p>
+<p>对于 Ubuntu 14.04 请参考 <a href="http://wiki.ros.org/indigo/Installation/Ubuntu" target="_blank">Ubuntu install of ROS Indigo</a></p>
 
 <p>安装配置完毕之后，新开一个终端，输入 rosc 并按 Tab 补全，若出现 roscd 则说明安装成功。</p>
 
+<div class="md-section-divider"></div>
+
 <h2 id="2-官方教程">2. 官方教程</h2>
 
-<p>阅读 ROS 官方 Wiki 提供教程 <a href="http://wiki.ros.org/ROS/Tutorials">ROS Tutorials</a>，除此之外还可以参考中文教程 <a href="http://blog.csdn.net/hcx25909/article/category/1191901">古月居 - ROS教程</a>，后者基于一个比较早期的 ROS 版本，部分指令不同，参考即可。</p>
+<p>阅读 ROS 官方 Wiki 提供教程 <a href="http://wiki.ros.org/ROS/Tutorials" target="_blank">ROS Tutorials</a>，除此之外还可以参考中文教程 <a href="http://blog.csdn.net/hcx25909/article/category/1191901" target="_blank">古月居 - ROS教程</a>，后者基于一个比较早期的 ROS 版本，部分指令不同，参考即可。</p>
+
+<div class="md-section-divider"></div>
 
 <h2 id="3-ide-项目开发">3. IDE 项目开发</h2>
 
-<p>ROS 社区推荐的 IDE 有 Eclipse、CodeBlocks、NetBeans 以及 QtCreator，除了 Eclipse 配合 PyDev 插件可以跑 Python 项目之外，其余都是针对 C++ 项目，具体可参见官方 Wiki <a href="http://wiki.ros.org/IDEs">IDEs</a>，Python 开发的话还推荐 PyCharm，参见教程 <a href="http://my.phirobot.com/blog/2013-12-ros_ide_for_python_pycharm.html">ROS开发环境之PyCharm (python)</a>。</p>
+<p>ROS 社区推荐的 IDE 有 Eclipse、CodeBlocks、NetBeans 以及 QtCreator，除了 Eclipse 配合 PyDev 插件可以跑 Python 项目之外，其余都是针对 C++ 项目，具体可参见官方 Wiki <a href="http://wiki.ros.org/IDEs" target="_blank">IDEs</a>，Python 开发的话还推荐 PyCharm，参见教程 <a href="http://my.phirobot.com/blog/2013-12-ros_ide_for_python_pycharm.html" target="_blank">ROS开发环境之PyCharm (python)</a>。</p>
+
+<div class="md-section-divider"></div>
 
 <h2 id="4-git-github-团队项目开发">4. Git / Github 团队项目开发</h2>
 
-<p>Git 教程推荐 <a href="http://igit.linuxtoy.org/contents.html">沉浸式学 Git</a> / <a href="http://git-scm.com/book/zh">Pro Git</a>，配合 <a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解 Git</a> 食用味道更佳。</p>
+<p>Git 教程推荐 <a href="http://igit.linuxtoy.org/contents.html" target="_blank">沉浸式学 Git</a> / <a href="http://git-scm.com/book/zh" target="_blank">Pro Git</a>，配合 <a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank">图解 Git</a> 食用味道更佳。</p>
 
 <p>团队仓库使用如下：</p>
 
@@ -53,20 +76,24 @@
 <ol>
 <li>每次仅 Add 自己写的源代码；</li>
 <li>每个模块命名规律为 bitathome_module_name，例如对于硬件控制模块，该 Package 取名为 bitathome_hardware_control;</li>
-<li>commit 注释必须认真填写，填写规范见：<a href="http://segmentfault.com/q/1010000000395039#a-1020000000400217">Github上git commit 提交注释的规范</a>；</li>
+<li>commit 注释必须认真填写，填写规范见：<a href="http://segmentfault.com/q/1010000000395039#a-1020000000400217" target="_blank">Github上git commit 提交注释的规范</a>；</li>
 <li>本地测试通过之后再上传到仓库当中，对自己的代码负责。</li>
 </ol>
 
+<div class="md-section-divider"></div>
+
 <h2 id="5-串口通信与运动控制">5. 串口通信与运动控制</h2>
 
-<p>PC 上位机通过串口与旅行者三号底座通信。串口的基本概念参见 <a href="http://zh.wikipedia.org/wiki/%E4%B8%B2%E8%A1%8C%E7%AB%AF%E5%8F%A3">串行接口 - 维基百科</a> 和 <a href="http://digital.ni.com/public.nsf/allkb/9F439B3D68D9072F4825703000383197">串口通信的基本概念</a></p>
+<p>PC 上位机通过串口与旅行者三号底座通信。串口的基本概念参见 <a href="http://zh.wikipedia.org/wiki/%E4%B8%B2%E8%A1%8C%E7%AB%AF%E5%8F%A3" target="_blank">串行接口 - 维基百科</a> 和 <a href="http://digital.ni.com/public.nsf/allkb/9F439B3D68D9072F4825703000383197" target="_blank">串口通信的基本概念</a></p>
 
-<p>在 Linux 下进行串口通信编程，普通用户是没有权限读写串口设备，需要进行设置，参见 <a href="http://tcthinking.diandian.com/post/2012-10-17/40039362949">Linux普通用户无权限使用串口设备的解决方法</a>。</p>
+<p>在 Linux 下进行串口通信编程，普通用户是没有权限读写串口设备，需要进行设置，参见 <a href="http://tcthinking.diandian.com/post/2012-10-17/40039362949" target="_blank">Linux普通用户无权限使用串口设备的解决方法</a>。</p>
 
-<p>Python 串口通信编程可使用 PySerial 模块，参见 <a href="http://pyserial.sourceforge.net/shortintro.html">PySerial Short introduction</a>。Linux 环境下可使用 socat 虚拟串口，参见 <a href="http://stackoverflow.com/questions/52187/virtual-serial-port-for-linux">Virtual Serial Port for Linux</a> 中排名第二的答案。</p>
+<p>Python 串口通信编程可使用 PySerial 模块，参见 <a href="http://pyserial.sourceforge.net/shortintro.html" target="_blank">PySerial Short introduction</a>。Linux 环境下可使用 socat 虚拟串口，参见 <a href="http://stackoverflow.com/questions/52187/virtual-serial-port-for-linux" target="_blank">Virtual Serial Port for Linux</a> 中排名第二的答案。</p>
 
-<p>旅行者三号串口通信协议见 <a href="ftp://ftp.bitathome.org/References/%E6%97%85%E8%A1%8C%E5%AE%B6III/%E6%97%85%E8%A1%8C%E5%AE%B6III%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/">FTP 资料</a>，暑期作业见 <a href="http://www.bitathome.org/Assignment/14_Summer/1.pdf">BIT@Home 14 年暑期集训作业(一)</a>。</p>
+<p>旅行者三号串口通信协议见 <a href="ftp://ftp.bitathome.org/References/%E6%97%85%E8%A1%8C%E5%AE%B6III/%E6%97%85%E8%A1%8C%E5%AE%B6III%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" target="_blank">FTP 资料</a>，暑期作业见 <a href="http://www.bitathome.org/Assignment/14_Summer/1.pdf/" target="_blank">BIT@Home 14 年暑期集训作业(一)</a>。</p>
 
 <hr>
 
 <p>最后编辑时间：2014/07/17 14:11</p>
+</body>
+</html>
